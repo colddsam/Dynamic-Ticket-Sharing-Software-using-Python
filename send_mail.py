@@ -9,8 +9,9 @@ import os
 load_dotenv()
 smtp_username = os.environ['EMAIL_ID']
 smtp_password = os.environ['PASSWORD']
+default_user=os.environ['DEFAULT_USER']
 
-def send_mail(name="Cosmonauts",receiver_email="dassamratkumar772@gmail.com"):
+def send_mail(name="Defestian",receiver_email=default_user):
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587 
     sender_email = smtp_username
