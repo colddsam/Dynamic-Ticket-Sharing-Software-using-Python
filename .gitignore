@@ -1,0 +1,6 @@
+__pycache__
+.env
+images
+secret_key.json
+venv
+data.csv
