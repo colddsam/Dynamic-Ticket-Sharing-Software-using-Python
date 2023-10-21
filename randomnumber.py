@@ -1,15 +1,15 @@
 import random
 import uuid
-email='dassamratkumar772@gmail.com'
-def genunique(email):
+def genunique(email=""):
     email=email.split("@")
     email=email[0]
-    if len(email)<4:
-        for num in range(4-len(email)):
+    if len(email)<2:
+        for num in range(2-len(email)):
             email+=str(num)
             num+=1
-    email=email[:4]
-    unique_id=email+str(random.randrange(1000,9999))
+    email=email[:2]
+    unique_id=email+str(random.randrange(100,999))
+    unique_id="DEVFEST-"+unique_id+"-GDGDGP23"
     return unique_id
 
 

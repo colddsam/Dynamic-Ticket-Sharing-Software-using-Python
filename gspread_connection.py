@@ -1,7 +1,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
-from randomnumber import genuuid
+from randomnumber import genuuid,genunique
 
 def gspread_connection():
     scopes=[
@@ -16,7 +16,8 @@ def gspread_connection():
 
     dataframe = pd.DataFrame(sheet.get_all_records())
     dataframe["Unique ID"]=""
-    dataframe["Unique ID"]=dataframe["Unique ID"].apply(genuuid)
+    for num,emailid in enumerate(dataframe["Email Address"]):
+        dataframe.loc[num, "Unique ID"] = genunique(email=emailid)
     dataframe["Checker"]="not done"
     dataframe.to_csv("data.csv")
     

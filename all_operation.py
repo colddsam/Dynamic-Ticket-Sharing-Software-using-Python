@@ -5,7 +5,7 @@ from imageoperation import imagegen
 import pandas as pd
 
 def operations():
-    if not os.path.exists("data.csv"):
+    if os.path.exists("data.csv"):
         gspread_connection()
     dataframe=pd.read_csv("data.csv")
     for num,email in enumerate(dataframe["Email Address"]):
